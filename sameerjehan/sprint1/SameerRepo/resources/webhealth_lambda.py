@@ -11,8 +11,8 @@ def lambda_handler(events, context):
     
     avail = get_availability()
     dimensions = [
-        {"Name": "URL","Value": constants.URL_MONITOR_NAMESPACE},
-        {"Name": "Region","Value": "DUB"}
+        {"Name": "URL","Value": constants.URL_TO_MONITOR}
+        # {"Name": "Region","Value": "DUB"}
     ]
     
     
@@ -21,8 +21,8 @@ def lambda_handler(events, context):
     
     latency = get_latency()
     dimensions = [
-        {"Name": "URL","Value": constants.URL_MONITOR_NAMESPACE},
-        {"Name": "Region","Value": "DUB"}
+        {"Name": "URL","Value": constants.URL_TO_MONITOR}
+        # {"Name": "Region","Value": "DUB"}
     ]
     
     
