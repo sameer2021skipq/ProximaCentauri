@@ -45,7 +45,7 @@ class SameerRepoStack(cdk.Stack):
             namespace=constants.URL_MONITOR_NAMESPACE,
             metric_name=constants.URL_MONITOR_AVAILABILITY,
             dimensions_map=dimensions,  
-            period = cdk.Duration.minutes(1), 
+            #period = cdk.Duration.minutes(1), 
             label = "Availability Metric"
         )
         
@@ -65,7 +65,7 @@ class SameerRepoStack(cdk.Stack):
             namespace=constants.URL_MONITOR_NAMESPACE,
             metric_name=constants.URL_MONITOR_LATENCY,
             dimensions_map=dimensions,
-            period = cdk.Duration.minutes(1),
+            #period = cdk.Duration.minutes(1),
             label = "Latency Metric"
         )
         
