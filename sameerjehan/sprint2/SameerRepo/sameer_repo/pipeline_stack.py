@@ -33,7 +33,7 @@ class PipelineStack(core.Stack): #here core.Stack is super class from which MyPi
         ##the above til source and build is done
         )
         #now you have to do staging which is to deploy in test environment
-        pipeline = pipelines.CodePipeline(self, 'Pipeline', synth = synth)
+        pipeline = pipelines.CodePipeline(self, 'newPipeline', synth = synth)
         
         beta = InfraStage(self, "Beta", 
         env={
