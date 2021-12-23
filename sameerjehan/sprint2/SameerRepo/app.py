@@ -10,10 +10,11 @@ from aws_cdk import core as cdk
 from aws_cdk import core
 
 from sameer_repo.sameer_repo_stack import SameerRepoStack
+from sameer_repo.pipeline_stack import PipelineStack
 
 
 app = core.App()
-SameerRepoStack(app, "SameerRepoStack",
+PipelineStack(app, "SameerSkipqQPipeline",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
@@ -26,7 +27,7 @@ SameerRepoStack(app, "SameerRepoStack",
     # Uncomment the next line if you know exactly what Account and Region you
     # want to deploy the stack to. */
 
-    #env=core.Environment(account='123456789012', region='us-east-1'),
+    env=core.Environment(account='315997497220', region='us-east-2'),
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
     )

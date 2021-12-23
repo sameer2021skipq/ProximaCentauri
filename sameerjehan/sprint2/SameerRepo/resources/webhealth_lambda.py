@@ -49,6 +49,6 @@ def get_latency(monitored_url_latency):
     response = http.request("GET", monitored_url_latency)
     end = datetime.datetime.now()
     delta = end - start 
-    latencySec = round(delta.microseconds * .000001, 6)
-    return latencySec
+    latency_sec = round(delta.microseconds * .000001, 6)
+    return latency_sec
 

@@ -38,7 +38,7 @@ class PipelineStack(core.Stack): #here core.Stack is super class from which MyPi
         beta = InfraStage(self, "Beta", 
         env={
             'account': "315997497220",
-            'region':'us-east-1'
+            'region':'us-east-2'
         })
         
         pipeline.add_stage(beta)
