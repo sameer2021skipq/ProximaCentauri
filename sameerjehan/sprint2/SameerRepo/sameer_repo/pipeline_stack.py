@@ -23,18 +23,17 @@ class PipelineStack(core.Stack): #here core.Stack is super class from which MyPi
         # ], 
         #For now I am not using any extenal libraries so I don't use pip install -r requirements-dev.txt
         #like urlli
-        commands=["cd sameerjehan/sprint2/SameerRepo","pip install -r requirements.txt",
+        commands=["cd sameerjehan/sprint1/SameerRepo","pip3 install -r requirements.txt",
         "pip install -r requirements-dev.txt -t ./SameerRepo/resources/dependencies",
         "npm install -g aws-cdk",
-        "cdk synth",
-        "cdk ls"
+        "cdk synth"
         
         ], 
-        primary_output_directory = "sameerjehan/sprint2/SameerRepo/cdk.out"
+        primary_output_directory = "sameerjehan/sprint1/SameerRepo/cdk.out"
         ##the above til source and build is done
         )
         #now you have to do staging which is to deploy in test environment
-        pipeline = pipelines.CodePipeline(self, 'sameerskipqpipeline', synth = synth)
+        pipeline = pipelines.CodePipeline(self, 'Pipeline', synth = synth)
         
         beta = InfraStage(self, "Beta", 
         env={
