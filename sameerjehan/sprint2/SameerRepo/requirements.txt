@@ -10,4 +10,8 @@ aws_cdk.pipelines==1.135.0
 aws_cdk.aws_codepipeline_actions==1.135.0
 aws_cdk.aws_codedeploy==1.135.0
 aws_cdk.aws-stepfunctions-tasks==1.135.0
+<<<<<<< HEAD
 aws_cdk.aws-s3-deployment==1.135.0
+=======
+aws_cdk.aws-s3-deployment==1.135.0
+>>>>>>> 47cbbef7fef7c2cf3cff9786bb252af6af4a8513
