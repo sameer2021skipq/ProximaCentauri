@@ -1,6 +1,6 @@
 import pytest
 from aws_cdk import core
-from sameer_repo.pipeline_stack import SameerRepoStack
+from sameer_repo.sameer_repo_stack import SameerRepoStack
 
 #This unit test is to check wheter I have two lambda functions or not
 def test_lambda():
