@@ -5,7 +5,7 @@ from sameer_repo.sameer_repo_stack import SameerRepoStack
 
 class InfraStage(cdk.Stage): #here core.Stack is super class from which MyPipelineStack is inheriting
     def __init__(self, scope: cdk.Construct, construct_id: str, **kwargs) -> None:
-        super().__init__(scope, id, **kwargs)
+        super().__init__(scope, construct_id, **kwargs)
         
         sameer_stack = SameerRepoStack(self,'sameerStack')
         
