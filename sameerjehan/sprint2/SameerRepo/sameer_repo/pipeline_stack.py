@@ -45,7 +45,7 @@ class PipelineStack(core.Stack): #here core.Stack is super class from which MyPi
         commands=["cd sameerjehan/sprint2/SameerRepo","pip install -r requirements-dev.txt",
         "pytest unittests pytest integrationtests"
         
-        ]), 
+        ]) 
         
         pipeline.add_stage(beta, pre = [unit_test])
         
