@@ -42,14 +42,14 @@ class PipelineStack(core.Stack): #here core.Stack is super class from which MyPi
         
         unit_test=pipelines.ShellStep("unit_test",
      
-        commands=["cd sameerjehan/sprint2/SameerRepo","pip install -r requirements-dev.txt",
+        commands=["cd sameerjehan/sprint2/SameerRepo","pip install -r requirements.txt",
         "pytest unittests pytest integrationtests"
         
         ]) 
         
         pipeline.add_stage(beta, pre = [unit_test])
         
-        pipeline.add_stage(prod ,
+        pipeline.add_stage(prod,
         pre = [pipelines.ManualApprovalStep("PromoteToProd")])
         
      
