@@ -34,7 +34,20 @@ class PipelineStack(core.Stack): #here core.Stack is super class from which MyPi
             'region':'us-east-2'
         })
         
-        pipeline.add_stage(beta)
+        prod = InfraStage(self, "Prod", 
+        env={
+            'account': "315997497220",
+            'region':'us-east-2'
+        })
+        
+        unit_test=pipelines.ShellStep("unit_test",
+     
+        commands=["cd sameerjehan/sprint2/SameerRepo/tests","pip install -r requirements-dev.txt",
+        "pytest unittests"
+        
+        ]), 
+        
+        pipeline.add_stage(beta, pre = [unit_test])
         
      
             
