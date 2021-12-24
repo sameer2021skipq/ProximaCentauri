@@ -33,16 +33,16 @@ class SameerRepoStack(cdk.Stack):
         lambda_role = self.create_lambda_role()
         
         try:
-            constants.BUCKET_NAME = "newsameerbucket"
-            sameerBucket = s3.Bucket(self, id = "sameerbucketnews3", bucket_name = constants.BUCKET_NAME)
-            firstDeploy = s3_deploy.BucketDeployment(self, "FirstDeploy",sources=[s3_deploy.Source.asset("./files")], destination_bucket = sameerBucket)
+            constants.BUCKET_NAME = "newsameerbucketsprint2"
+            sameerBucket = s3.Bucket(self, id = "sameerbucketnews3sprint2", bucket_name = constants.BUCKET_NAME)
+            firstDeploy = s3_deploy.BucketDeployment(self, "FirstDeployBucket",sources=[s3_deploy.Source.asset("./files")], destination_bucket = sameerBucket)
             # constants.BUCKET_NAME_MODIFIED = constants.BUCKET_NAME
             
         except:
             print("Bucket Already Exists")
             
         try:
-            self.create_table("newTable", "SameerTableTwo")
+            self.create_table("newTableSameer", "SameerTableTwoSprintTwo")
         except:
             print("Table Already Created")
        
@@ -67,7 +67,7 @@ class SameerRepoStack(cdk.Stack):
         [lambda_target, lambda_target_one
         ])
     
-        topic = sns.Topic(self, "SameerWebHealthTopic")
+        topic = sns.Topic(self, "SameerWebHealthTopicSNS")
         topic.add_subscription(subscriptions_.EmailSubscription('sameer.jehan.s@skipq.org'))
         # print(topic)
         topic.add_subscription(subscriptions_.LambdaSubscription(fn=dynamodb_lambda))
@@ -81,15 +81,15 @@ class SameerRepoStack(cdk.Stack):
             availability_metric = cloudwatch_.Metric(
                 namespace=constants.URL_TO_MONITOR_NAMESPACE,
                 #metric_name=constants.URL_MONITOR_AVAILABILITY,
-                metric_name =  constants.URL_MONITOR_AVAILABILITY+constants.URL_TO_MONITOR_LIST[i],
+                metric_name =  "Sameer" + constants.URL_MONITOR_AVAILABILITY+constants.URL_TO_MONITOR_LIST[i],
                 dimensions_map=dimensions, 
                 period = cdk.Duration.minutes(1), 
-                label = "Sameer" + "_" + "Availability Metric" + "_" + constants.URL_TO_MONITOR_LIST[i]
+                label = "SameerNew" + "_" + "Availability Metric" + "_" + constants.URL_TO_MONITOR_LIST[i]
             )
         
             availability_alarm = cloudwatch_.Alarm(
                 self, 
-                id = "Sameer" + "_" + constants.URL_TO_MONITOR_LIST[i] + "_" + 'AvailabilityAlarm', 
+                id = "SameerNew" + "_" + constants.URL_TO_MONITOR_LIST[i] + "_" + 'AvailabilityAlarm', 
                 metric = availability_metric, 
                 comparison_operator=cloudwatch_.ComparisonOperator.LESS_THAN_THRESHOLD,
                 datapoints_to_alarm = 1,
@@ -102,15 +102,15 @@ class SameerRepoStack(cdk.Stack):
             latency_metric = cloudwatch_.Metric(
                 namespace=constants.URL_TO_MONITOR_NAMESPACE,
                 #metric_name=constants.URL_MONITOR_LATENCY,
-                metric_name = constants.URL_MONITOR_LATENCY+constants.URL_TO_MONITOR_LIST[i],
+                metric_name = "Sameer" + constants.URL_MONITOR_LATENCY+constants.URL_TO_MONITOR_LIST[i],
                 dimensions_map=dimensions,
                 period = cdk.Duration.minutes(1),
-                label = "Sameer" + "_" + "Latency Metric" + "_" + constants.URL_TO_MONITOR_LIST[i]
+                label = "SameerNew" + "_" + "Latency Metric" + "_" + constants.URL_TO_MONITOR_LIST[i]
                 )
         
             latency_alarm = cloudwatch_.Alarm(
                 self, 
-                id = "Sameer" + "_" + constants.URL_TO_MONITOR_LIST[i] + "_" + 'LatencyAlarm', 
+                id = "SameerNew" + "_" + constants.URL_TO_MONITOR_LIST[i] + "_" + 'LatencyAlarm', 
                 metric = latency_metric, 
                 comparison_operator=cloudwatch_.ComparisonOperator.GREATER_THAN_THRESHOLD,
                 datapoints_to_alarm = 1,

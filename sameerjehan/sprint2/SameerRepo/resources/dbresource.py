@@ -6,7 +6,7 @@ class dynamoData:
         self.resource = boto3.resource('dynamodb') 
         
     def insert_data(self, message, createdDate):
-        table = self.resource.Table("SameerTableTwo")
+        table = self.resource.Table("SameerTableTwoSprintTwo")
         table.put_item(Item = {
             'Name' : message, 
             'CreationDate' : createdDate,
@@ -15,7 +15,7 @@ class dynamoData:
         
     def update_tabledata(self, message, createdDate, url_monitor, threshold_breached):
         dynamodb = boto3.resource('dynamodb')
-        table = dynamodb.Table('SameerTableTwo')
+        table = dynamodb.Table('SameerTableTwoSprintTwo')
         update = table.update_item(
             Key={
                  "Name": message,

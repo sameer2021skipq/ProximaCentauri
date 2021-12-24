@@ -5,7 +5,7 @@ import os
 
 def lambda_handler(events, context):
     dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table('SameerTableTwo')
+    table = dynamodb.Table('SameerTableTwoSprintTwo')
     update = table.update_item(
         
      #   {'id':{'S':'test_id'}},

@@ -17,7 +17,7 @@ def lambda_handler(events, context):
             ]
     
     
-        cw.put_data(constants.URL_TO_MONITOR_NAMESPACE, constants.URL_MONITOR_AVAILABILITY+constants.URL_TO_MONITOR_LIST[i],dimensions,avail)
+        cw.put_data(constants.URL_TO_MONITOR_NAMESPACE, constants.URL_MONITOR_AVAILABILITY+constants.URL_TO_MONITOR_LIST[i]+"sameer",dimensions,avail)
     
         latency = get_latency(constants.URL_TO_MONITOR_LIST[i])
         dimensions = [
@@ -26,7 +26,7 @@ def lambda_handler(events, context):
         ]
     
     
-        cw.put_data(constants.URL_TO_MONITOR_NAMESPACE, constants.URL_MONITOR_LATENCY+constants.URL_TO_MONITOR_LIST[i],dimensions,latency)
+        cw.put_data(constants.URL_TO_MONITOR_NAMESPACE, constants.URL_MONITOR_LATENCY+constants.URL_TO_MONITOR_LIST[i]+"sameer",dimensions,latency)
     
         values.update({"availability":avail, "Latency":latency})
         

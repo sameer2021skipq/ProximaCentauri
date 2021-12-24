@@ -1,5 +1,5 @@
 URL_TO_MONITOR_LIST = []  
-URL_TO_MONITOR_NAMESPACE = "MonitorWebsite"
+URL_TO_MONITOR_NAMESPACE = "TestWebsite"
 #URL_MONITOR_NAMESPACE = "SameerNewWebHealth"
 #URL_MONITOR_NAMESPACE = "SameerWebHealth"
 URL_MONITOR_AVAILABILITY = "url_availability"
