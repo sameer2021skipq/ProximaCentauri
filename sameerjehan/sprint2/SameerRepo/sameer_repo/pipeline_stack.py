@@ -15,15 +15,8 @@ class PipelineStack(core.Stack): #here core.Stack is super class from which MyPi
             )
         
         synth=pipelines.ShellStep("synth",input=source,
-        # commands=["cd sameerjehan/sprint1/SameerRepo","pip install -r requirements.txt",
-        # "pip install -r requirements-dev.txt -t ./SameerRepo/resources/dependencies",
-        # "npm install -g aws-cdk",
-        # "cdk synth"
-        
-        # ], 
-        #For now I am not using any extenal libraries so I don't use pip install -r requirements-dev.txt
-        #like urlli
-        commands=["cd sameerjehan/sprint2/SameerRepo","pip install -r requirements.txt",
+     
+        commands=["cd sameerjehan/sprint1/SameerRepo","pip install -r requirements.txt",
         "pip install -r requirements-dev.txt -t ./SameerRepo/resources/dependencies",
         "npm install -g aws-cdk",
         "cdk synth"
