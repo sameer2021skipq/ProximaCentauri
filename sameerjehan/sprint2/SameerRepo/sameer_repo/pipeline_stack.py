@@ -49,6 +49,9 @@ class PipelineStack(core.Stack): #here core.Stack is super class from which MyPi
         
         pipeline.add_stage(beta, pre = [unit_test])
         
+        pipeline.add_stage(prod ,
+        pre = [pipelines.ManualApprovalStep("PromoteToProd")])
+        
      
             
            
