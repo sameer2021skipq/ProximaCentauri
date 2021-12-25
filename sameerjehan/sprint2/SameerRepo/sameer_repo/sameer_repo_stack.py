@@ -34,17 +34,17 @@ class SameerRepoStack(cdk.Stack):
         
         try:
             constants.BUCKET_NAME = "newsameerbucketsprint2"
-            sameerBucket = s3.Bucket(self, id = "sameerbucketnews3sprint2", bucket_name = constants.BUCKET_NAME)
-            firstDeploy = s3_deploy.BucketDeployment(self, "FirstDeployBucket",sources=[s3_deploy.Source.asset("./files")], destination_bucket = sameerBucket)
+       #     sameerBucket = s3.Bucket(self, id = "sameerbucketnews3sprint2", bucket_name = constants.BUCKET_NAME)
+       #     firstDeploy = s3_deploy.BucketDeployment(self, "FirstDeployBucket",sources=[s3_deploy.Source.asset("./files")], destination_bucket = sameerBucket)
             # constants.BUCKET_NAME_MODIFIED = constants.BUCKET_NAME
             
         except:
             print("Bucket Already Exists")
             
-        try:
-            self.create_table("newTableSameer", "SameerTableTwoSprintTwo")
-        except:
-            print("Table Already Created")
+        # try:
+        #     self.create_table("newTableSameer", "SameerTableTwoSprintTwo")
+        # except:
+        #     print("Table Already Created")
        
    
         
